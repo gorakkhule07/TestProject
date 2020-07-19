@@ -1,0 +1,64 @@
+/* 'Open Sans' font from Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+.allcontacts {
+  width: 95%;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.allcontacts-header,
+.allcontacts p {
+  margin-top: 10;
+  margin-bottom: 10;
+}
+
+.allcontacts-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: rgb(15, 66, 107);
+}
+
+.allcontacts-header {
+  background: rgb(12, 77, 129);
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.allcontacts-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.allcontacts p {
+  padding: 12px;
+}
+
+.allcontacts input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 5px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+
+
+.allcontacts input[type="submit"]:hover {
+  background: #17c;
+}
+
+.allcontacts input[type="submit"]:focus {
+  border-color: #05a;
+}

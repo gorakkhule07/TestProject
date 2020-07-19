@@ -1,0 +1,66 @@
+<div class="allcontacts">
+  <h2 class="allcontacts-header">All Contact</h2>
+  
+  <form class="allcontacts-container">
+    <div style="color: green; text-align: center;">{{ UserMessage }}</div>
+
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <a style="margin-left:65%;" routerLink="/newcontact">NEW CONTACT</a>
+      </div>
+      <div class="col-xs-5 col-sm-5 col-md-5"></div>
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        Search:
+        <input type="search" (input)="onSearchChange($event.target.value)" ngbTooltip="Search by any column"
+          class="form-control input-sm full-data-search" placeholder="Search by email">
+
+      </div>
+    </div>
+    <br />
+    <div class="table-responsive">
+
+      <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="50">
+        <thead>
+          <tr>
+            <th style="width: 10%">
+              <mfDefaultSorter by="firstName">First Name</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter by="lastName">Last Name</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter by="email">Email</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter by="phoneNumber">Phone Number</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+              <mfDefaultSorter by="status">Status</mfDefaultSorter>
+            </th>
+            <th style="width: 10%"> Action </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName }}</td>
+            <td><a>{{item.email}}</a></td>
+            <td>{{item.phoneNumber}}</td>
+            <td>{{item.status}}</td>
+            <td>
+              <a [routerLink]="['/newcontact']" [queryParams]="{ id:item.id}">Edit </a>
+              <a [routerLink]="" (click)="DeleteContact(this.item.id)">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="6">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </form>
+</div>

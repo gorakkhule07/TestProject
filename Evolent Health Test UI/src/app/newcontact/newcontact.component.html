@@ -1,0 +1,58 @@
+<div class="newcontact">
+  <h2 class="newcontact-header">{{ Operation }} Contact</h2>
+
+  <form class="newcontact-container">
+    <p>
+      <a style="margin-left:65%;" routerLink="/allcontacts">ALL CONTACTS</a>
+     
+    </p>
+    <div style="color: red; text-align: center" *ngIf="IsShowUsermessageError">{{ UserMessage }}</div>
+    <div style="color: green; text-align: center;" *ngIf="IsShowUsermessageSuccess">{{ UserMessage }}</div>
+    <p>
+      First Name:
+      <input [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel" type="text" placeholder="First Name"
+        class="form-control">
+      <small style="color: red;" *ngIf="isSubmitted && model.firstName == undefined">First name is required</small>
+    </p>
+
+
+    <p>
+      Last Name:
+      <input [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel" type="text" placeholder="Last Name"
+        class="form-control">
+      <small style="color: red;" *ngIf="isSubmitted && model.lastName == undefined">Last name is required</small>
+    </p>
+
+    <p>
+      Phone Number:
+      <input [(ngModel)]="model.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" type="text"
+        placeholder="Phone Number" class="form-control">
+      <small style="color: red;" *ngIf="isSubmitted && model.phoneNumber == undefined">Phone Number is
+        required</small>
+    </p>
+    <p>
+      Email:
+      <input [(ngModel)]="model.email" name="email" #Email="ngModel" type="text" placeholder="Email"
+        class="form-control">
+      <small style="color: red;" *ngIf="isSubmitted && model.email == undefined">Email is required</small>
+    </p>
+
+    <p class="form-group">
+      Status:
+      <select [(ngModel)]="model.status" name="status" #status="ngModel" class="form-control" id="sel1">
+
+        <option>-- Select Status --</option>
+        <option>Active</option>
+        <option>InActive</option>
+      </select>
+      <small style="color: red;"
+        *ngIf="isSubmitted && (model.status == undefined || model.status == '-- Select Status --')">Status is
+        required</small>
+    </p>
+    <p >
+      <input type="submit" (click)="SaveContact()" value="Submit">
+
+    </p>
+    
+  </form>
+</div>
