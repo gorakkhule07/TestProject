@@ -5,7 +5,7 @@
     1.	Open Project in Visual Studio code
     2.	Change Base Api URL in environment.ts file to access web api
         apiURL: 'http://localhost:53339/api/’
-    3.	Run ng server command in visual studio command 
+    3.	Run ng serve command in visual studio command 
     4.	if you are facing any dependency issue please run npm install command
 
 2.	Project – EvolentHelathTestApi
