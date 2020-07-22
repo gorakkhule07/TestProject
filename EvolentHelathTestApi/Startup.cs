@@ -20,7 +20,7 @@ namespace EvolentHelathTestApi
 
         public IConfiguration Configuration { get; }
 
-        public static string DbConnectionString = @"Data Source=43.255.152.25;Initial Catalog=MSTestSchema;Integrated Security=False;User ID=mstestuser;Password=Admin@1234";
+        public static string DbConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=MSTestSchema;Integrated Security=False;User ID=mstestuser;Password=Admin@1234";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
