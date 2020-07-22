@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,7 +8,7 @@ namespace EvolentHelathTestApi
 {
     public class ContactEntityBuilder : BaseEntityBuilder<ContactEntity>
     {
-        public override ContactEntity BuildEntity(MySqlDataReader reader)
+        public override ContactEntity BuildEntity(SqlDataReader reader)
         {
             ContactEntity contactDetail = new ContactEntity();
             try

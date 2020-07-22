@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,20 +17,21 @@ namespace EvolentHelathTestApi
             {
 
                 CommandTxt = SP_Contacts_I_contact;
-                MySqlCommand dbCommand = new MySqlCommand(CommandTxt, Connection);
+                SqlCommand dbCommand = new SqlCommand(CommandTxt, Connection);
                 dbCommand.CommandType = CommandType.StoredProcedure;
                 OpenConnection();
                 dbCommand.Parameters.Clear();
-                dbCommand.Parameters.AddWithValue("iEmail", contact.Email);
-                dbCommand.Parameters.AddWithValue("iFirstName", contact.FirstName);
-                dbCommand.Parameters.AddWithValue("iLastName", contact.LastName);
-                dbCommand.Parameters.AddWithValue("iPhoneNumber", contact.PhoneNumber);
-                dbCommand.Parameters.AddWithValue("iStatus", contact.Status);
+                dbCommand.Parameters.AddWithValue("@iEmail", contact.Email);
+                dbCommand.Parameters.AddWithValue("@iFirstName", contact.FirstName);
+                dbCommand.Parameters.AddWithValue("@iLastName", contact.LastName);
+                dbCommand.Parameters.AddWithValue("@iPhoneNumber", contact.PhoneNumber);
+                dbCommand.Parameters.AddWithValue("@iStatus", contact.Status);
                 result = dbCommand.ExecuteNonQuery();
                 Connection.Close();
                 return result;
             }
             catch (Exception ex)
+            
             {
                 Connection.Close();
                 return result;
@@ -47,9 +48,9 @@ namespace EvolentHelathTestApi
 
                 CommandTxt = SP_Contacts_G_ALL_contact;
                 OpenConnection();
-                MySqlCommand dbCommand = new MySqlCommand(CommandTxt, Connection);
+                SqlCommand dbCommand = new SqlCommand(CommandTxt, Connection);
                 dbCommand.CommandType = CommandType.StoredProcedure;
-                using (MySqlDataReader dataReader = dbCommand.ExecuteReader())
+                using (SqlDataReader dataReader = dbCommand.ExecuteReader())
                 {
                     lstContactEntity = contactBuilder.BuildEntities(dataReader);
                 }
@@ -73,10 +74,10 @@ namespace EvolentHelathTestApi
                 CommandTxt = SP_Contacts_G_ById_contact;
 
                 OpenConnection();
-                MySqlCommand dbCommand = new MySqlCommand(CommandTxt, Connection);
+                SqlCommand dbCommand = new SqlCommand(CommandTxt, Connection);
                 dbCommand.CommandType = CommandType.StoredProcedure;
-                dbCommand.Parameters.AddWithValue("iId", Id);
-                using (MySqlDataReader reader = dbCommand.ExecuteReader())
+                dbCommand.Parameters.AddWithValue("@iId", Id);
+                using (SqlDataReader reader = dbCommand.ExecuteReader())
                 {
                     if (reader.HasRows)
                     {
@@ -103,14 +104,14 @@ namespace EvolentHelathTestApi
 
                 CommandTxt = SP_Contacts_U_contact;
                 OpenConnection();
-                MySqlCommand dbCommand = new MySqlCommand(CommandTxt, Connection);
+                SqlCommand dbCommand = new SqlCommand(CommandTxt, Connection);
                 dbCommand.CommandType = CommandType.StoredProcedure;
-                dbCommand.Parameters.AddWithValue("iId", contact.Id);
-                dbCommand.Parameters.AddWithValue("iEmail", contact.Email);
-                dbCommand.Parameters.AddWithValue("iFirstName", contact.FirstName);
-                dbCommand.Parameters.AddWithValue("iLastName", contact.LastName);
-                dbCommand.Parameters.AddWithValue("iPhoneNumber", contact.PhoneNumber);
-                dbCommand.Parameters.AddWithValue("iStatus", contact.Status);
+                dbCommand.Parameters.AddWithValue("@iId", contact.Id);
+                dbCommand.Parameters.AddWithValue("@iEmail", contact.Email);
+                dbCommand.Parameters.AddWithValue("@iFirstName", contact.FirstName);
+                dbCommand.Parameters.AddWithValue("@iLastName", contact.LastName);
+                dbCommand.Parameters.AddWithValue("@iPhoneNumber", contact.PhoneNumber);
+                dbCommand.Parameters.AddWithValue("@iStatus", contact.Status);
                 result = dbCommand.ExecuteNonQuery();
                 Connection.Close();
                 return result;
@@ -131,9 +132,9 @@ namespace EvolentHelathTestApi
 
                 CommandTxt = SP_Contacts_D_ById_contact;
                 OpenConnection();
-                MySqlCommand dbCommand = new MySqlCommand(CommandTxt, Connection);
+                SqlCommand dbCommand = new SqlCommand(CommandTxt, Connection);
                 dbCommand.CommandType = CommandType.StoredProcedure;
-                dbCommand.Parameters.AddWithValue("iId", Id);
+                dbCommand.Parameters.AddWithValue("@iId", Id);
                 result = dbCommand.ExecuteNonQuery();
                 Connection.Close();
                 return result;
@@ -152,12 +153,12 @@ namespace EvolentHelathTestApi
             try
             {
                 CommandTxt = SP_Contacts_G_Email_count;
-                MySqlCommand dbCommand = new MySqlCommand(CommandTxt, Connection);
+                SqlCommand dbCommand = new SqlCommand(CommandTxt, Connection);
                 dbCommand.CommandType = CommandType.StoredProcedure;
                 OpenConnection();
                 dbCommand.Parameters.Clear();
-                dbCommand.Parameters.AddWithValue("iId", Id);
-                dbCommand.Parameters.AddWithValue("iEmail", Email);
+                dbCommand.Parameters.AddWithValue("@iId", Id);
+                dbCommand.Parameters.AddWithValue("@iEmail", Email);
                 result = Convert.ToInt32(dbCommand.ExecuteScalar());
                 Connection.Close();
                 return result;

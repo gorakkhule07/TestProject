@@ -23,3 +23,15 @@ C:\My Drive\Evolent Health Test Project\EvolentHelathTestApi\obj\Debug\netcoreap
 C:\My Drive\Evolent Health Test Project\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.AssemblyInfo.cs
 C:\My Drive\Evolent Health Test Project\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.dll
 C:\My Drive\Evolent Health Test Project\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.pdb
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\EvolentHelathTestApi.deps.json
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\EvolentHelathTestApi.runtimeconfig.json
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\EvolentHelathTestApi.runtimeconfig.dev.json
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\EvolentHelathTestApi.dll
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\bin\Debug\netcoreapp2.0\EvolentHelathTestApi.pdb
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.AssemblyInfoInputs.cache
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.AssemblyInfo.cs
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.dll
+C:\Users\User\Source\Repos\TestProject\EvolentHelathTestApi\obj\Debug\netcoreapp2.0\EvolentHelathTestApi.pdb

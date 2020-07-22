@@ -20,14 +20,14 @@ namespace EvolentHelathTestApi
 
         public IConfiguration Configuration { get; }
 
-        public static string DbConnectionString = @"server=127.0.0.1;port=3306;userid=root;password=root@123;database=dbTest;persistsecurityinfo=True";
+        public static string DbConnectionString = @"Data Source=43.255.152.25;Initial Catalog=MSTestSchema;Integrated Security=False;User ID=mstestuser;Password=Admin@1234";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
             services.AddSingleton<IContactDataAccess, ContactDataAccess>();
             //DbConnectionString = Configuration.GetSection("DbConnectionString").Value;
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

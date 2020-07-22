@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,8 +15,8 @@ namespace EvolentHelathTestApi
             get; set;
         }
 
-        private MySqlConnection connection = null;
-        public MySqlConnection Connection
+        private SqlConnection connection = null;
+        public SqlConnection Connection
         {
             get
             {
@@ -26,7 +26,7 @@ namespace EvolentHelathTestApi
                 }
                 else
                 {
-                    connection = new MySqlConnection(Startup.DbConnectionString);
+                    connection = new SqlConnection(Startup.DbConnectionString);
                     return connection;
                 }
 

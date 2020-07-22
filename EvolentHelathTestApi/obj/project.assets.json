@@ -14280,11 +14280,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\My Drive\\Evolent Health Test Project\\EvolentHelathTestApi\\EvolentHelathTestApi.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\TestProject\\EvolentHelathTestApi\\EvolentHelathTestApi.csproj",
       "projectName": "EvolentHelathTestApi",
-      "projectPath": "C:\\My Drive\\Evolent Health Test Project\\EvolentHelathTestApi\\EvolentHelathTestApi.csproj",
+      "projectPath": "C:\\Users\\User\\Source\\Repos\\TestProject\\EvolentHelathTestApi\\EvolentHelathTestApi.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\My Drive\\Evolent Health Test Project\\EvolentHelathTestApi\\obj\\",
+      "outputPath": "C:\\Users\\User\\Source\\Repos\\TestProject\\EvolentHelathTestApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

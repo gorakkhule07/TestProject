@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,9 +8,9 @@ namespace EvolentHelathTestApi
 {
     public abstract class BaseEntityBuilder<T>
     {
-        public abstract T BuildEntity(MySqlDataReader record);
+        public abstract T BuildEntity(SqlDataReader record);
 
-        public List<T> BuildEntities(MySqlDataReader reader)
+        public List<T> BuildEntities(SqlDataReader reader)
         {
             List<T> collection = new List<T>();
             try
